@@ -1,3 +1,4 @@
+
 const config = require('./src/data/config');
 
 require('dotenv').config({
@@ -45,8 +46,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './static/favicon/favicon-512.png',
+        logo: 'src/static/favicon/favicon-512.png',
         injectHTML: true,
+        legacy: true,
         icons: {
           android: true,
           appleIcon: true,
@@ -69,7 +71,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
-        icon: './static/favicon/favicon-512.png',
+        icon: 'src/static/favicon/favicon-512.png',
       },
     },
     'gatsby-plugin-offline',
