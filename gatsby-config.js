@@ -5,6 +5,7 @@ require('dotenv').config({
 });
 
 module.exports = {
+  pathPrefix: "/portfolio",
   siteMetadata: {
     title: config.defaultTitle,
     description: config.defaultDescription,
