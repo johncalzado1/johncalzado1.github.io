@@ -5,7 +5,6 @@ import social from './social.json'
 import { withPrefix } from 'gatsby';
 
 export const Footer = () => {
-	console.log("prefix",withPrefix("/"))
 	return (
 		<Wrapper>
 			<Flex as={Container}>
@@ -36,7 +35,7 @@ export const Footer = () => {
 							rel="noopener noreferrer"
 							aria-label={`follow me on ${name}`}
 						>
-							<img width="24" src={icon} alt={name} />
+							<img width="24" src={withPrefix("/") + icon} alt={name} />
 						</a>
 					))}
 				</Links>
