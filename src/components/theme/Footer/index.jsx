@@ -2,14 +2,17 @@ import React from 'react'
 import { Container } from 'components/common'
 import { Wrapper, Flex, Links, Details } from './styles'
 import social from './social.json'
+import { withPrefix } from 'gatsby';
 
-export const Footer = () => (
-	<Wrapper>
-		<Flex as={Container}>
-			<Details>
-				<h2>John Calzado</h2>
-				<span>long live rice!</span>
-				{/* <span>
+export const Footer = () => {
+	console.log("prefix",withPrefix("/"))
+	return (
+		<Wrapper>
+			<Flex as={Container}>
+				<Details>
+					<h2>John Calzado</h2>
+					<span>long live rice!</span>
+					{/* <span>
 					© All rights are reserved | {new Date().getFullYear()} | Made with{' '}
 					<span aria-label="love" role="img">
 						💖
@@ -23,20 +26,21 @@ export const Footer = () => (
 						Smakosh
 					</a>
 				</span> */}
-			</Details>
-			<Links>
-				{social.map(({ id, name, link, icon }) => (
-					<a
-						key={id}
-						href={link}
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label={`follow me on ${name}`}
-					>
-						<img width="24" src={icon} alt={name} />
-					</a>
-				))}
-			</Links>
-		</Flex>
-	</Wrapper>
-)
+				</Details>
+				<Links>
+					{social.map(({ id, name, link, icon }) => (
+						<a
+							key={id}
+							href={link}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={`follow me on ${name}`}
+						>
+							<img width="24" src={icon} alt={name} />
+						</a>
+					))}
+				</Links>
+			</Flex>
+		</Wrapper>
+	)
+}
