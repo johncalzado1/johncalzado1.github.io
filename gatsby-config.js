@@ -23,23 +23,23 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-source-flamelink',
-      options: {
-        firebaseConfig: {
-          privateKey,
-          databaseURL: process.env.FIREBASE_DATABSE_URL,
-          storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-          projectId: process.env.FIREBASE_PROJECT_ID,
-          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        },
-        environment: 'production',
-        content: true,
-        populate: true,
-        navigation: true,
-        globals: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-flamelink',
+    //   options: {
+    //     firebaseConfig: {
+    //       privateKey,
+    //       databaseURL: process.env.FIREBASE_DATABSE_URL,
+    //       storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    //       projectId: process.env.FIREBASE_PROJECT_ID,
+    //       clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    //     },
+    //     environment: 'production',
+    //     content: true,
+    //     populate: true,
+    //     navigation: true,
+    //     globals: true,
+    //   },
+    // },
     {
       resolve: 'gatsby-source-graphql',
       options: {
