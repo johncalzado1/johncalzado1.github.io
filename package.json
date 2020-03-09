@@ -20,6 +20,7 @@
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-source-filesystem": "^2.1.35",
+    "gatsby-source-flamelink": "^2.1.2",
     "gatsby-source-graphql": "2.1.29",
     "gatsby-transformer-sharp": "^2.2.7",
     "prop-types": "^15.6.2",
@@ -38,13 +39,17 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build-normal": "gatsby build",
     "start": "gatsby develop -o",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "reset": "rm -rf .cache/ public/",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "dev": "cross-env node_modules/.bin/gatsby develop",
+    "dev-build": "cross-env node_modules/.bin/gatsby build",
+    "build": "cross-env node_modules/.bin/gatsby build",
+    "serve": "node_modules/.bin/gatsby serve"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

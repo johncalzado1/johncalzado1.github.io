@@ -5,6 +5,12 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+// Firebase 
+const parseNewLines = function(key) {
+  return typeof key === 'string' ? key.replace(/\\n/g, '\n') : key
+}
+const privateKey = parseNewLines(process.env.FIREBASE_CONFIG_PK)
+
 module.exports = {
   pathPrefix: "/portfolio",
   siteMetadata: {
@@ -17,6 +23,23 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-flamelink',
+      options: {
+        firebaseConfig: {
+          privateKey,
+          databaseURL: process.env.FIREBASE_DATABSE_URL,
+          storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        },
+        environment: 'production',
+        content: true,
+        populate: true,
+        navigation: true,
+        globals: true,
+      },
+    },
     {
       resolve: 'gatsby-source-graphql',
       options: {
