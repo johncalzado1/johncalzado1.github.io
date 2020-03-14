@@ -124,7 +124,7 @@ export default withFormik({
 					message,
 					'g-recaptcha-response': recaptcha,
 				}),
-			})
+			}).then(res => console.log("RESULT: ", res))
 			await setSubmitting(false)
 			await setFieldValue('success', true)
 			setTimeout(() => resetForm(), 2000)
