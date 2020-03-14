@@ -5,6 +5,7 @@ import * as Yup from 'yup'
 import { Button, Input } from 'components/common'
 import { recaptcha_key } from 'data/config'
 import { Error, Center, InputField } from './styles'
+import axios from 'axios'
 
 const FormSpreeContactForm = ({
 	setFieldValue,
@@ -103,8 +104,7 @@ export default withFormik({
 			recaptcha: Yup.string().required('Robots are not welcome yet!'),
 		}),
 	handleSubmit: async (
-		// { name, email, message, recaptcha },
-		values,
+		{ name, email, message, recaptcha },
 		{ setSubmitting, resetForm, setFieldValue }
 	) => {
 		try {
@@ -115,22 +115,29 @@ export default withFormik({
 					)
 					.join('&')
 			}
-			console.log("form values", name, email, message, recaptcha)
-			await fetch('https://formspree.io/mgezopoj', {
-				method: 'POST',
-				body: values,
-				// headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				// body: encode({
-				// 	'form-name': 'portfolio-dev',
-				// 	name,
-				// 	email,
-				// 	message,
-				// 	'g-recaptcha-response': recaptcha,
-				// }),
-			}).then(res => console.log("RESULT: ", res))
-			await setSubmitting(false)
-			await setFieldValue('success', true)
-			setTimeout(() => resetForm(), 2000)
+
+			axios({
+				method: "POST",
+				url: "https://formspree.io/mgezopoj",
+				data: encode({
+					'form-name': 'johncalzado',
+					name,
+					email,
+					message,
+					'g-recaptcha-response': recaptcha,
+				})
+			})
+				.then(response => {
+					console.log("Message successfully sent")
+					setSubmitting(false);
+					setFieldValue('success', true)
+					setTimeout(() => resetForm(), 2000)
+				})
+				.catch(error => {
+					setSubmitting(false)
+					setFieldValue('success', false)
+					alert('Something went wrong, please try again!', error) // eslint-disable-line
+				});
 		} catch (err) {
 			setSubmitting(false)
 			setFieldValue('success', false)
