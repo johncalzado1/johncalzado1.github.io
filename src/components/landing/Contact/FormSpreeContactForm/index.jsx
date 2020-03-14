@@ -114,6 +114,7 @@ export default withFormik({
 					)
 					.join('&')
 			}
+			console.log("form values", name, email, message, recaptcha)
 			await fetch('https://formspree.io/mgezopoj', {
 				method: 'POST',
 				// headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
