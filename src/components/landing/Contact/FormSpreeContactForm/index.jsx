@@ -103,7 +103,8 @@ export default withFormik({
 			recaptcha: Yup.string().required('Robots are not welcome yet!'),
 		}),
 	handleSubmit: async (
-		{ name, email, message, recaptcha },
+		// { name, email, message, recaptcha },
+		values,
 		{ setSubmitting, resetForm, setFieldValue }
 	) => {
 		try {
@@ -117,14 +118,15 @@ export default withFormik({
 			console.log("form values", name, email, message, recaptcha)
 			await fetch('https://formspree.io/mgezopoj', {
 				method: 'POST',
+				body: values,
 				// headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: encode({
-					'form-name': 'portfolio-dev',
-					name,
-					email,
-					message,
-					'g-recaptcha-response': recaptcha,
-				}),
+				// body: encode({
+				// 	'form-name': 'portfolio-dev',
+				// 	name,
+				// 	email,
+				// 	message,
+				// 	'g-recaptcha-response': recaptcha,
+				// }),
 			}).then(res => console.log("RESULT: ", res))
 			await setSubmitting(false)
 			await setFieldValue('success', true)
