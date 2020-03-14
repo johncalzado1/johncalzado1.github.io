@@ -136,11 +136,13 @@ export default withFormik({
 				.catch(error => {
 					setSubmitting(false)
 					setFieldValue('success', false)
-					alert('Something went wrong, please try again!', error) // eslint-disable-line
+					console.log("ERROR (post to formspree):", error)
+					alert('Something went wrong, please try again!') // eslint-disable-line
 				});
 		} catch (err) {
 			setSubmitting(false)
 			setFieldValue('success', false)
+			console.log("ERROR: ", err)
 			alert('Something went wrong, please try again!') // eslint-disable-line
 		}
 	},
