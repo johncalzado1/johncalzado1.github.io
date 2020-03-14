@@ -124,7 +124,7 @@ export default withFormik({
 					name,
 					email,
 					message,
-					'g-recaptcha-response': recaptcha,
+					// 'g-recaptcha-response': recaptcha,
 				})
 			})
 				.then(response => {
@@ -137,7 +137,7 @@ export default withFormik({
 					setSubmitting(false)
 					setFieldValue('success', false)
 					console.log("ERROR (post to formspree):", error)
-					alert('Something went wrong, please try again!') // eslint-disable-line
+					alert('Something went wrong, please try again (post to formspree)!') // eslint-disable-line
 				});
 		} catch (err) {
 			setSubmitting(false)
