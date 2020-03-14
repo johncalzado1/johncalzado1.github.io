@@ -13,77 +13,77 @@ const FormSpreeContactForm = ({
 	errors,
 	touched,
 }) => (
-	<Form
-		name="portfolio-dev"
-		method="post"
-	>
-		<InputField>
-			<Input
-				as={FastField}
-				type="text"
-				name="name"
-				component="input"
-				aria-label="name"
-				placeholder="Full name*"
-				error={touched.name && errors.name}
-			/>
-			<ErrorMessage component={Error} name="name" />
-		</InputField>
-		<InputField>
-			<Input
-				id="email"
-				aria-label="email"
-				component="input"
-				as={FastField}
-				type="email"
-				name="email"
-				placeholder="Email*"
-				error={touched.email && errors.email}
-			/>
-			<ErrorMessage component={Error} name="email" />
-		</InputField>
-		<InputField>
-			<Input
-				as={FastField}
-				component="textarea"
-				aria-label="message"
-				id="message"
-				rows="8"
-				type="text"
-				name="message"
-				placeholder="Message*"
-				error={touched.message && errors.message}
-			/>
-			<ErrorMessage component={Error} name="message" />
-		</InputField>
-		{values.name && values.email && values.message && (
+		<Form
+			name="portfolio-dev"
+			method="post"
+		>
 			<InputField>
-				<FastField
-					component={Recaptcha}
-					sitekey={recaptcha_key}
-					name="recaptcha"
-					onChange={value => setFieldValue('recaptcha', value)}
+				<Input
+					as={FastField}
+					type="text"
+					name="name"
+					component="input"
+					aria-label="name"
+					placeholder="Full name*"
+					error={touched.name && errors.name}
 				/>
-				<ErrorMessage component={Error} name="recaptcha" />
+				<ErrorMessage component={Error} name="name" />
 			</InputField>
-		)}
-		{values.success && (
 			<InputField>
-				<Center>
-					<h4>
-						Your message has been successfully sent, I will get back to you
-						ASAP!
-					</h4>
-				</Center>
+				<Input
+					id="email"
+					aria-label="email"
+					component="input"
+					as={FastField}
+					type="email"
+					name="email"
+					placeholder="Email*"
+					error={touched.email && errors.email}
+				/>
+				<ErrorMessage component={Error} name="email" />
 			</InputField>
-		)}
-		<Center>
-			<Button secondary type="submit" disabled={isSubmitting}>
-				Submit
+			<InputField>
+				<Input
+					as={FastField}
+					component="textarea"
+					aria-label="message"
+					id="message"
+					rows="8"
+					type="text"
+					name="message"
+					placeholder="Message*"
+					error={touched.message && errors.message}
+				/>
+				<ErrorMessage component={Error} name="message" />
+			</InputField>
+			{values.name && values.email && values.message && (
+				<InputField>
+					<FastField
+						component={Recaptcha}
+						sitekey={recaptcha_key}
+						name="recaptcha"
+						onChange={value => setFieldValue('recaptcha', value)}
+					/>
+					<ErrorMessage component={Error} name="recaptcha" />
+				</InputField>
+			)}
+			{values.success && (
+				<InputField>
+					<Center>
+						<h4>
+							Your message has been successfully sent, I will get back to you
+							ASAP!
+					</h4>
+					</Center>
+				</InputField>
+			)}
+			<Center>
+				<Button secondary type="submit" disabled={isSubmitting}>
+					Submit
 			</Button>
-		</Center>
-	</Form>
-)
+			</Center>
+		</Form>
+	)
 
 export default withFormik({
 	mapPropsToValues: () => ({
@@ -116,7 +116,7 @@ export default withFormik({
 			}
 			await fetch('https://formspree.io/mgezopoj', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				// headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: encode({
 					'form-name': 'portfolio-dev',
 					name,
