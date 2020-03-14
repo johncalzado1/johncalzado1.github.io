@@ -6,7 +6,7 @@ import { Button, Input } from 'components/common'
 import { recaptcha_key } from 'data/config'
 import { Error, Center, InputField } from './styles'
 
-const ContactForm = ({
+const NetlifyContactForm = ({
 	setFieldValue,
 	isSubmitting,
 	values,
@@ -137,4 +137,4 @@ export default withFormik({
 			alert('Something went wrong, please try again!') // eslint-disable-line
 		}
 	},
-})(ContactForm)
+})(NetlifyContactForm)
