@@ -10,22 +10,6 @@ console.log("form mode:", process.env.GATSBY_FORM_MODE)
 export const Contact = () => (
   <Wrapper as={Container} id="contact">
     <Details>
-      {/* <form
-        action="https://formspree.io/mgezopoj"
-        method="POST"
-      >
-        <label>
-          Your email:
-    <input type="text" name="_replyto" />
-        </label>
-        <label>
-          Your message:
-    <textarea name="message"></textarea>
-        </label>
-
-
-        <button type="submit">Send</button>
-      </form> */}
       {
         (process.env.GATSBY_FORM_MODE === "netlify") ?
           (<NetlifyContactForm />)
