@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Button } from 'components/common'
 import dev from 'assets/illustrations/skills.svg'
 import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
-import { Accordian } from '../../common/Accordian';
 import { FlexItem } from '../../common/FlexItem'
 import { skill_icons } from './skill_icons';
 
@@ -66,9 +65,9 @@ export const Skills = () => {
                 </FlexItem>
               </FlexItem>
             </FlexItem>
-            <FlexItem direction='row'>
-              {/* <p>Other: Gatsby, Jekyll, HTML, CSS, Java, Oracle SQL, Wordpress, Git, Postman, adobe fireworks, Autodesk AutoCAD, Autodesk Inventor, DesignSpark PCB</p> */}
-            </FlexItem>
+            {/* <FlexItem direction='row'>
+              <p>Other: Gatsby, Jekyll, HTML, CSS, Java, Oracle SQL, Wordpress, Git, Postman, adobe fireworks, Autodesk AutoCAD, Autodesk Inventor, DesignSpark PCB</p>
+            </FlexItem> */}
           </FlexItem>
         </Details>
       </SkillsWrapper>
