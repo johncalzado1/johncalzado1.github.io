@@ -35,8 +35,8 @@ export const Details = styled.div`
   }
 
   p {
-    margin-bottom: 2.5rem;
-    font-size: 20pt;
+    margin-bottom: 1rem;
+    font-size: 14pt;
     font-weight: normal;
     line-height: 1.3;
     color: #707070;
