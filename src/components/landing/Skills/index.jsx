@@ -57,11 +57,12 @@ export const Skills = () => {
             </FlexItem>
             <FlexItem direction='row'>
               <FlexItem>
-                <FlexItem><p>Other - Ansible, AWX, Appium</p></FlexItem>
+                <FlexItem><p>Other - Ansible, AWX, Appium, Git</p></FlexItem>
                 <FlexItem direction='row' wrap='nowrap'>
                   <SkillIcon src={skill_icons.ansible}></SkillIcon>
                   <SkillIcon src={skill_icons.awx}></SkillIcon>
                   <SkillIcon src={skill_icons.appium}></SkillIcon>
+                  <SkillIcon src={skill_icons.git}></SkillIcon>
                 </FlexItem>
               </FlexItem>
             </FlexItem>

@@ -9,6 +9,7 @@ import lxd from 'assets/icons/lxd.svg';
 import python from 'assets/icons/python.svg';
 import react from 'assets/icons/react.svg';
 import virtualbox from 'assets/icons/virtualbox.svg';
+import git from 'assets/icons/git.svg'
 
 export const skill_icons = {
     ansible: ansible,
@@ -21,5 +22,6 @@ export const skill_icons = {
     lxd: lxd,
     python: python,
     react: react,
-    virtualbox: virtualbox
+    virtualbox: virtualbox,
+    git: git
 } 
