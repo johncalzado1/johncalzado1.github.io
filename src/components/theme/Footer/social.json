@@ -4,5 +4,23 @@
     "name": "Github",
     "link": "https://github.com/johncalzado1",
     "icon": "icons/github.svg"
+  },
+  {
+    "id": 2,
+    "name": "LinkedIn",
+    "link": "https://linkedin.com/in/johncalzado",
+    "icon": "icons/linkedin.svg"
+  },
+  {
+    "id": 3,
+    "name": "Instagram",
+    "link": "https://www.instagram.com/friedrice4life1",
+    "icon": "icons/instagram.svg"
+  },
+  {
+    "id": 4,
+    "name": "YouTube",
+    "link": "https://www.youtube.com/channel/UC2f5Ow-SCSQAO4ZZkT2llOA",
+    "icon": "icons/youtube.svg"
   }
 ]
