@@ -48,7 +48,7 @@
     "lint:fix": "eslint . --fix",
     "reset": "rm -rf .cache/ public/",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "dev": "cross-env node_modules/.bin/gatsby develop",
     "dev-build": "cross-env node_modules/.bin/gatsby build",
     "build": "cross-env node_modules/.bin/gatsby build",
