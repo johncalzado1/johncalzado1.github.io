@@ -12,7 +12,7 @@ const parseNewLines = function(key) {
 const privateKey = parseNewLines(process.env.FIREBASE_CONFIG_PK)
 
 module.exports = {
-  pathPrefix: "/portfolio",
+  pathPrefix: "/",
   siteMetadata: {
     title: config.defaultTitle,
     description: config.defaultDescription,
