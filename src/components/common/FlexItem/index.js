@@ -6,13 +6,17 @@ export const FlexItem = ({
     alignItems = 'flex-start',
     direction = 'column',
     position = 'left',
-    wrap = 'wrap'
+    wrap = 'wrap',
+    grow = false,
+    maxWidth = 'auto',
+    minWidth = 'auto',
+    noMargin = false,
 }) => {
     let marginLeft = 'auto';
     let marginRight = 'auto';
     let marginTop = 'auto';
     let marginBottom = 'auto';
-
+    grow = (grow === 1) ? true : false;
     switch (position) {
         case 'left':
             marginLeft = '0px';
@@ -28,6 +32,13 @@ export const FlexItem = ({
             break;
     }
 
+    if (noMargin === true) {
+        marginTop = '0px';
+        marginBottom = '0px';
+        marginLeft = '0px';
+        marginRight = '0px';
+    }
+
     return (
         <div style={{
             display: 'flex',
@@ -38,7 +49,10 @@ export const FlexItem = ({
             marginTop: marginTop,
             marginBottom: marginBottom,
             marginLeft: marginLeft,
-            marginRight: marginRight
+            marginRight: marginRight,
+            flexGrow: grow,
+            maxWidth: maxWidth,
+            minWidth: minWidth
         }}>
             {children}
         </div >
